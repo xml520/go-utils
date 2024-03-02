@@ -1,0 +1,9 @@
+package tmplUtil
+
+import (
+	"testing"
+)
+
+func Test{{.Names.String}}(t *testing.T) {
+
+}

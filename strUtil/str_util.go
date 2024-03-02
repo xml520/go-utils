@@ -101,3 +101,12 @@ func SplitInt(str, sep string) ([]int, error) {
 	}
 	return intArr, nil
 }
+
+// ToInt 字符串转数值，失败返回 -1
+func ToInt(str string) int {
+	v, err := strconv.Atoi(str)
+	if err != nil {
+		return -1
+	}
+	return v
+}
