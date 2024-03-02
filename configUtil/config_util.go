@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
-	"go-utils/structUtil"
+	"github.com/xml520/go-utils/structUtil"
 	"path/filepath"
 	"reflect"
 	"strings"

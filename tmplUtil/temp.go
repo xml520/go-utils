@@ -3,7 +3,7 @@ package tmplUtil
 import (
 	"bytes"
 	"errors"
-	"go-utils/structUtil"
+	"github.com/xml520/go-utils/structUtil"
 	"html/template"
 	"os"
 )
