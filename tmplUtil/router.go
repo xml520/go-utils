@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"errors"
 	"fmt"
-	"go-utils/strUtil"
-	"go-utils/structUtil"
+	"github.com/xml520/go-utils/strUtil"
+	"github.com/xml520/go-utils/structUtil"
 	"os"
 	"strings"
 )

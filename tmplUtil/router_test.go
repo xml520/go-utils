@@ -1,7 +1,7 @@
 package tmplUtil
 
 import (
-	"go-utils/structUtil"
+	"github.com/xml520/go-utils/structUtil"
 	"testing"
 	"time"
 )

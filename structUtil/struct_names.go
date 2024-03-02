@@ -1,7 +1,7 @@
 package structUtil
 
 import (
-	"go-utils/strUtil"
+	"github.com/xml520/go-utils/strUtil"
 	"strings"
 	"unicode"
 )

@@ -1,4 +1,4 @@
-module go-utils
+module github.com/xml520/go-utils
 
 go 1.22
 
