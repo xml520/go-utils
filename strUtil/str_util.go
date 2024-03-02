@@ -2,6 +2,7 @@ package strUtil
 
 import (
 	"math/rand"
+	"strconv"
 	"strings"
 	"time"
 	"unicode"
@@ -35,7 +36,6 @@ func CamelToSnake(str string, translate ...string) string {
 	for _, s := range translate {
 		str = strings.ReplaceAll(str, ToUpper(s), ToUpper(ToLower(s), 1))
 	}
-
 	strArr := make([]string, 1)
 	for i, s := range str {
 		if i != 0 && unicode.IsUpper(s) {
@@ -43,7 +43,6 @@ func CamelToSnake(str string, translate ...string) string {
 		} else {
 			strArr[len(strArr)-1] += string(s)
 		}
-
 	}
 	return ToLower(strings.Join(strArr, "_"))
 }
@@ -88,4 +87,17 @@ func RandStr(n int, str ...string) string {
 		remain--
 	}
 	return *(*string)(unsafe.Pointer(&b))
+}
+
+// SplitInt 分割字符串并且转int分片
+func SplitInt(str, sep string) ([]int, error) {
+	var err error
+	strArr := strings.Split(str, sep)
+	intArr := make([]int, len(strArr))
+	for i, s := range strArr {
+		if intArr[i], err = strconv.Atoi(s); err != nil {
+			return nil, err
+		}
+	}
+	return intArr, nil
 }

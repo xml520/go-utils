@@ -1,6 +1,8 @@
 package structUtil
 
-import "reflect"
+import (
+	"reflect"
+)
 
 type StructField struct {
 	field reflect.StructField
@@ -20,6 +22,7 @@ func NewStructFields(typ reflect.Type) []*StructField {
 			fields = append(fields, NewStructField(field))
 		}
 	}
+
 	return fields
 }
 func (f *StructField) Names() StructNames {

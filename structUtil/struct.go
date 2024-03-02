@@ -25,6 +25,9 @@ func NewStruct(v any, comment ...string) *Struct {
 		s.comment = strings.Join(comment, " ")
 	}
 	s.typ = reflect.TypeOf(v)
+	if s.typ.Kind() == reflect.Ptr {
+		s.typ = s.typ.Elem()
+	}
 	s.Fields = NewStructFields(s.typ)
 	return &s
 }
