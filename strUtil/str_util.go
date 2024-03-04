@@ -118,3 +118,5 @@ func Md5(str string) string {
 	hash := md5.Sum([]byte(str))
 	return hex.EncodeToString(hash[:])
 }
+
+//s
