@@ -1,6 +1,8 @@
 package strUtil
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"math/rand"
 	"strconv"
 	"strings"
@@ -109,4 +111,10 @@ func ToInt(str string) int {
 		return -1
 	}
 	return v
+}
+
+// Md5 获取字符串md5
+func Md5(str string) string {
+	hash := md5.Sum([]byte(str))
+	return hex.EncodeToString(hash[:])
 }
