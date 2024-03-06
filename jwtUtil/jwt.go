@@ -17,7 +17,9 @@ type JwtAuth struct {
 // GenerateToken 生成Token
 func GenerateToken(claims *JwtAuth, secret []byte) string {
 	// 将 uid，用户角色， 过期时间作为数据写入 token 中
-	claims.StandardClaims.ExpiresAt = time.Now().Add(time.Hour * 999999).Unix()
+	if claims.StandardClaims.ExpiresAt == 0 {
+		claims.StandardClaims.ExpiresAt = time.Now().Add(time.Hour * 999999).Unix()
+	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	// SecretKey 用于对用户数据进行签名，不能暴露
 	str, _ := token.SignedString(secret)
